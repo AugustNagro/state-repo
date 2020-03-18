@@ -1,0 +1,9 @@
+{
+  "name": "state-repo",
+  "version": "1.0.4",
+  "description": "State Management Made Simple",
+  "main": "state-repo.js",
+  "repository": "https://github.com/AugustNagro/state-repo.git",
+  "author": "August Nagro <augustnagro@gmail.com> (https://august.nagro.us)",
+  "license": "MIT"
+}
