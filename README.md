@@ -1,7 +1,6 @@
 ## state-repo.js
-Here's the big idea. State Management shouldn't be so hard. State Management
-shouldn't need such complex libraries. State Management should be simple,
-easy, and fun.
+Here's the big idea. State Management shouldn't need such complex libraries.
+State Management should be simple, easy, and fun.
 
 Published on NPM at [state-repo](https://www.npmjs.com/package/state-repo). Check out the examples:
 
