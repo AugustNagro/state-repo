@@ -1,0 +1,5 @@
+{
+	"sources": ["state-repo.js"],
+	"output": "doc",
+	"readme": "README.md"
+}

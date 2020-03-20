@@ -3,7 +3,10 @@ Here's the big idea. State Management shouldn't be so hard. State Management
 shouldn't need such complex libraries. State Management should be simple,
 easy, and fun.
 
-Published on NPM at [state-repo](https://www.npmjs.com/package/state-repo). Check out the Hello World example [source](https://github.com/AugustNagro/state-repo/tree/master/examples/hello-world), and [live website](https://august.nagro.us/examples/hello-world/).
+Published on NPM at [state-repo](https://www.npmjs.com/package/state-repo). Check out the examples:
+
+* Hello World [source](https://github.com/AugustNagro/state-repo/tree/master/examples/hello-world), and [live](https://august.nagro.us/examples/hello-world/)
+* Counters [source](https://github.com/AugustNagro/state-repo/tree/master/examples/counter), and [live](https://august.nagro.us/examples/counter/)
 
 ```javascript
 // imports the global state repository, but you can create your own.
@@ -24,7 +27,7 @@ writer.set(userState => {
 });
 
 // or, don't pass a function and directly set
-writer.set(newUserState);
+writer.setValue(newUserState);
 
 // elsewhere in your app
 function updateSomethingElse(newVal, reader) {
@@ -75,14 +78,14 @@ encapsulated, not shared across components. If updating the same state
 from disparate components is necessary, a pattern similar to Redux's action
 definitions can be used:
 
-file: `actions/user-actions.js`
+file: `states/user-state.js`
 
 ```javascript
 import { repo } from 'state-repo.js';
 
 export const USER_STATE = 'USER_STATE';
 // note that writer is not exported
-const writer = repo.writer(USER_STATE);
+const writer = repo.writer(USER_STATE, {});
 
 export const userChangeName = (first, last) => writer.set(userState => {
   userState.first = first;
@@ -96,9 +99,11 @@ export const userMakeBirthdayToday = () => writer.set(userState => {
 });
 ```
 
+See the [Counter Demo](https://github.com/AugustNagro/state-repo/tree/master/examples/counter) source for a complete example.
+
 Sure, state-repo.js isn't purely functional like Redux, but good encapsulations is sufficient;
 JavaScript isn't a pure language to begin with. And while the common case is not multiple-writers,
-its easy to refactor to the 'action' pattern.
+it's easy to refactor to the 'action' pattern.
 
 So just like those seeking to resolve a standardization problem end up adding
 yet another competing standard, I too present a new library to solve

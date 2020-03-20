@@ -1,6 +1,6 @@
 {
   "name": "state-repo",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "State Management Made Simple",
   "main": "state-repo.js",
   "repository": "https://github.com/AugustNagro/state-repo.git",
